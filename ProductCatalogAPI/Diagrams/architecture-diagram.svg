@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #2c3e50; }
+      .layer-title { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; fill: #34495e; }
+      .component { font-family: Arial, sans-serif; font-size: 12px; fill: #2c3e50; }
+      .layer-box { fill: #ecf0f1; stroke: #34495e; stroke-width: 2; }
+      .controller-box { fill: #3498db; stroke: #2980b9; stroke-width: 1; }
+      .service-box { fill: #e74c3c; stroke: #c0392b; stroke-width: 1; }
+      .model-box { fill: #2ecc71; stroke: #27ae60; stroke-width: 1; }
+      .data-box { fill: #f39c12; stroke: #e67e22; stroke-width: 1; }
+      .external-box { fill: #9b59b6; stroke: #8e44ad; stroke-width: 1; }
+      .arrow { stroke: #34495e; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#34495e" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="600" y="30" text-anchor="middle" class="title">Product Catalog API - Arquitetura</text>
+  
+  <!-- Presentation Layer -->
+  <rect x="50" y="60" width="1100" height="120" class="layer-box" />
+  <text x="70" y="85" class="layer-title">PRESENTATION LAYER - Controllers</text>
+  
+  <!-- Controllers -->
+  <rect x="80" y="100" width="140" height="60" class="controller-box" />
+  <text x="150" y="120" text-anchor="middle" class="component">Products</text>
+  <text x="150" y="135" text-anchor="middle" class="component">Controller</text>
+  <text x="150" y="150" text-anchor="middle" class="component">(CRUD + Search)</text>
+  
+  <rect x="240" y="100" width="140" height="60" class="controller-box" />
+  <text x="310" y="120" text-anchor="middle" class="component">Categories</text>
+  <text x="310" y="135" text-anchor="middle" class="component">Controller</text>
+  <text x="310" y="150" text-anchor="middle" class="component">(CRUD + Stats)</text>
+  
+  <rect x="400" y="100" width="140" height="60" class="controller-box" />
+  <text x="470" y="120" text-anchor="middle" class="component">Customers</text>
+  <text x="470" y="135" text-anchor="middle" class="component">Controller</text>
+  <text x="470" y="150" text-anchor="middle" class="component">(CRUD + Analysis)</text>
+  
+  <rect x="560" y="100" width="140" height="60" class="controller-box" />
+  <text x="630" y="120" text-anchor="middle" class="component">Orders</text>
+  <text x="630" y="135" text-anchor="middle" class="component">Controller</text>
+  <text x="630" y="150" text-anchor="middle" class="component">(CRUD + Reports)</text>
+  
+  <rect x="720" y="100" width="140" height="60" class="controller-box" />
+  <text x="790" y="120" text-anchor="middle" class="component">Analytics</text>
+  <text x="790" y="135" text-anchor="middle" class="component">Controller</text>
+  <text x="790" y="150" text-anchor="middle" class="component">(Dashboard + BI)</text>
+  
+  <rect x="880" y="100" width="140" height="60" class="controller-box" />
+  <text x="950" y="120" text-anchor="middle" class="component">Search</text>
+  <text x="950" y="135" text-anchor="middle" class="component">Controller</text>
+  <text x="950" y="150" text-anchor="middle" class="component">(Advanced LINQ)</text>
+  
+  <rect x="1040" y="100" width="100" height="60" class="controller-box" />
+  <text x="1090" y="120" text-anchor="middle" class="component">External</text>
+  <text x="1090" y="135" text-anchor="middle" class="component">API</text>
+  <text x="1090" y="150" text-anchor="middle" class="component">Controller</text>
+  
+  <!-- Application Layer -->
+  <rect x="50" y="200" width="1100" height="80" class="layer-box" />
+  <text x="70" y="225" class="layer-title">APPLICATION LAYER - Services</text>
+  
+  <rect x="500" y="240" width="200" height="30" class="service-box" />
+  <text x="600" y="260" text-anchor="middle" class="component">ExternalApiService</text>
+  
+  <!-- Domain Layer -->
+  <rect x="50" y="300" width="1100" height="120" class="layer-box" />
+  <text x="70" y="325" class="layer-title">DOMAIN LAYER - Models</text>
+  
+  <rect x="150" y="340" width="120" height="60" class="model-box" />
+  <text x="210" y="360" text-anchor="middle" class="component">Product</text>
+  <text x="210" y="375" text-anchor="middle" class="component">Model</text>
+  <text x="210" y="390" text-anchor="middle" class="component">(Core Entity)</text>
+  
+  <rect x="300" y="340" width="120" height="60" class="model-box" />
+  <text x="360" y="360" text-anchor="middle" class="component">Category</text>
+  <text x="360" y="375" text-anchor="middle" class="component">Model</text>
+  <text x="360" y="390" text-anchor="middle" class="component">(1:N Products)</text>
+  
+  <rect x="450" y="340" width="120" height="60" class="model-box" />
+  <text x="510" y="360" text-anchor="middle" class="component">Customer</text>
+  <text x="510" y="375" text-anchor="middle" class="component">Model</text>
+  <text x="510" y="390" text-anchor="middle" class="component">(1:N Orders)</text>
+  
+  <rect x="600" y="340" width="120" height="60" class="model-box" />
+  <text x="660" y="360" text-anchor="middle" class="component">Order</text>
+  <text x="660" y="375" text-anchor="middle" class="component">Model</text>
+  <text x="660" y="390" text-anchor="middle" class="component">(1:N OrderItems)</text>
+  
+  <rect x="750" y="340" width="120" height="60" class="model-box" />
+  <text x="810" y="360" text-anchor="middle" class="component">OrderItem</text>
+  <text x="810" y="375" text-anchor="middle" class="component">Model</text>
+  <text x="810" y="390" text-anchor="middle" class="component">(Junction Table)</text>
+  
+  <!-- Infrastructure Layer -->
+  <rect x="50" y="440" width="1100" height="80" class="layer-box" />
+  <text x="70" y="465" class="layer-title">INFRASTRUCTURE LAYER - Data Access</text>
+  
+  <rect x="450" y="480" width="300" height="30" class="data-box" />
+  <text x="600" y="500" text-anchor="middle" class="component">ApplicationDbContext (Entity Framework)</text>
+  
+  <!-- External APIs -->
+  <rect x="50" y="540" width="1100" height="100" class="layer-box" />
+  <text x="70" y="565" class="layer-title">EXTERNAL INTEGRATIONS</text>
+  
+  <rect x="80" y="580" width="120" height="40" class="external-box" />
+  <text x="140" y="595" text-anchor="middle" class="component">ViaCEP</text>
+  <text x="140" y="610" text-anchor="middle" class="component">API</text>
+  
+  <rect x="220" y="580" width="120" height="40" class="external-box" />
+  <text x="280" y="595" text-anchor="middle" class="component">Currency</text>
+  <text x="280" y="610" text-anchor="middle" class="component">API</text>
+  
+  <rect x="360" y="580" width="120" height="40" class="external-box" />
+  <text x="420" y="595" text-anchor="middle" class="component">Random User</text>
+  <text x="420" y="610" text-anchor="middle" class="component">API</text>
+  
+  <rect x="500" y="580" width="120" height="40" class="external-box" />
+  <text x="560" y="595" text-anchor="middle" class="component">IP Geolocation</text>
+  <text x="560" y="610" text-anchor="middle" class="component">API</text>
+  
+  <rect x="640" y="580" width="120" height="40" class="external-box" />
+  <text x="700" y="595" text-anchor="middle" class="component">Bitcoin</text>
+  <text x="700" y="610" text-anchor="middle" class="component">API</text>
+  
+  <rect x="780" y="580" width="120" height="40" class="external-box" />
+  <text x="840" y="595" text-anchor="middle" class="component">Countries</text>
+  <text x="840" y="610" text-anchor="middle" class="component">API</text>
+  
+  <!-- Database -->
+  <rect x="50" y="660" width="1100" height="80" class="layer-box" />
+  <text x="70" y="685" class="layer-title">DATABASE LAYER</text>
+  
+  <rect x="450" y="700" width="300" height="30" class="data-box" />
+  <text x="600" y="720" text-anchor="middle" class="component">SQL Server - ProductCatalogDB</text>
+  
+  <!-- Arrows -->
+  <line x1="600" y1="180" x2="600" y2="200" class="arrow" />
+  <line x1="600" y1="280" x2="600" y2="300" class="arrow" />
+  <line x1="600" y1="420" x2="600" y2="440" class="arrow" />
+  <line x1="600" y1="520" x2="600" y2="540" class="arrow" />
+  <line x1="600" y1="640" x2="600" y2="660" class="arrow" />
+  
+  <!-- Side arrows for external APIs -->
+  <line x1="1090" y1="160" x2="1090" y2="240" class="arrow" />
+  <line x1="1090" y1="240" x2="600" y2="240" class="arrow" />
+  <line x1="600" y1="270" x2="600" y2="580" class="arrow" />
+  
+  <!-- Legend -->
+  <rect x="900" y="660" width="250" height="120" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1" />
+  <text x="910" y="680" class="layer-title">Legenda:</text>
+  <rect x="910" y="690" width="15" height="10" class="controller-box" />
+  <text x="930" y="700" class="component">Controllers (API Endpoints)</text>
+  <rect x="910" y="705" width="15" height="10" class="service-box" />
+  <text x="930" y="715" class="component">Services (Business Logic)</text>
+  <rect x="910" y="720" width="15" height="10" class="model-box" />
+  <text x="930" y="730" class="component">Models (Domain Entities)</text>
+  <rect x="910" y="735" width="15" height="10" class="data-box" />
+  <text x="930" y="745" class="component">Data Access (EF Core)</text>
+  <rect x="910" y="750" width="15" height="10" class="external-box" />
+  <text x="930" y="760" class="component">External APIs</text>
+</svg>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1000" height="700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #2c3e50; }
+      .table-title { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; fill: #ffffff; }
+      .field { font-family: Arial, sans-serif; font-size: 11px; fill: #2c3e50; }
+      .pk { font-family: Arial, sans-serif; font-size: 11px; fill: #e74c3c; font-weight: bold; }
+      .fk { font-family: Arial, sans-serif; font-size: 11px; fill: #3498db; font-weight: bold; }
+      .table-header { fill: #34495e; stroke: #2c3e50; stroke-width: 1; }
+      .table-body { fill: #ecf0f1; stroke: #bdc3c7; stroke-width: 1; }
+      .relationship { stroke: #e74c3c; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .relationship-label { font-family: Arial, sans-serif; font-size: 10px; fill: #e74c3c; font-weight: bold; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e74c3c" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="500" y="30" text-anchor="middle" class="title">Product Catalog API - Database ERD</text>
+  
+  <!-- Category Table -->
+  <rect x="50" y="80" width="180" height="25" class="table-header" />
+  <text x="140" y="98" text-anchor="middle" class="table-title">Category</text>
+  
+  <rect x="50" y="105" width="180" height="120" class="table-body" />
+  <text x="60" y="120" class="pk">Id (PK) - int</text>
+  <text x="60" y="135" class="field">Name - nvarchar(100)</text>
+  <text x="60" y="150" class="field">Description - nvarchar(500)</text>
+  <text x="60" y="165" class="field">CreatedAt - datetime2</text>
+  <text x="60" y="180" class="field">IsActive - bit</text>
+  <text x="60" y="195" class="field">Products - Collection</text>
+  <text x="60" y="210" class="field">└─ Navigation Property</text>
+  
+  <!-- Product Table -->
+  <rect x="300" y="80" width="200" height="25" class="table-header" />
+  <text x="400" y="98" text-anchor="middle" class="table-title">Product</text>
+  
+  <rect x="300" y="105" width="200" height="200" class="table-body" />
+  <text x="310" y="120" class="pk">Id (PK) - int</text>
+  <text x="310" y="135" class="field">Name - nvarchar(100)</text>
+  <text x="310" y="150" class="field">Description - nvarchar(1000)</text>
+  <text x="310" y="165" class="field">Price - decimal(18,2)</text>
+  <text x="310" y="180" class="field">Stock - int</text>
+  <text x="310" y="195" class="fk">CategoryId (FK) - int</text>
+  <text x="310" y="210" class="field">Brand - nvarchar(50)</text>
+  <text x="310" y="225" class="field">Rating - float</text>
+  <text x="310" y="240" class="field">ImageUrl - nvarchar(500)</text>
+  <text x="310" y="255" class="field">CreatedAt - datetime2</text>
+  <text x="310" y="270" class="field">UpdatedAt - datetime2</text>
+  <text x="310" y="285" class="field">IsActive - bit</text>
+  <text x="310" y="300" class="field">Category - Navigation</text>
+  
+  <!-- Customer Table -->
+  <rect x="50" y="350" width="180" height="25" class="table-header" />
+  <text x="140" y="368" text-anchor="middle" class="table-title">Customer</text>
+  
+  <rect x="50" y="375" width="180" height="180" class="table-body" />
+  <text x="60" y="390" class="pk">Id (PK) - int</text>
+  <text x="60" y="405" class="field">Name - nvarchar(100)</text>
+  <text x="60" y="420" class="field">Email - nvarchar(100)</text>
+  <text x="60" y="435" class="field">Phone - nvarchar(20)</text>
+  <text x="60" y="450" class="field">Address - nvarchar(200)</text>
+  <text x="60" y="465" class="field">City - nvarchar(50)</text>
+  <text x="60" y="480" class="field">PostalCode - nvarchar(10)</text>
+  <text x="60" y="495" class="field">CreatedAt - datetime2</text>
+  <text x="60" y="510" class="field">IsActive - bit</text>
+  <text x="60" y="525" class="field">Orders - Collection</text>
+  <text x="60" y="540" class="field">└─ Navigation Property</text>
+  
+  <!-- Order Table -->
+  <rect x="300" y="350" width="180" height="25" class="table-header" />
+  <text x="390" y="368" text-anchor="middle" class="table-title">Order</text>
+  
+  <rect x="300" y="375" width="180" height="140" class="table-body" />
+  <text x="310" y="390" class="pk">Id (PK) - int</text>
+  <text x="310" y="405" class="fk">CustomerId (FK) - int</text>
+  <text x="310" y="420" class="field">OrderDate - datetime2</text>
+  <text x="310" y="435" class="field">TotalAmount - decimal(18,2)</text>
+  <text x="310" y="450" class="field">Status - nvarchar(20)</text>
+  <text x="310" y="465" class="field">Notes - nvarchar(500)</text>
+  <text x="310" y="480" class="field">Customer - Navigation</text>
+  <text x="310" y="495" class="field">OrderItems - Collection</text>
+  <text x="310" y="510" class="field">└─ Navigation Property</text>
+  
+  <!-- OrderItem Table -->
+  <rect x="550" y="350" width="180" height="25" class="table-header" />
+  <text x="640" y="368" text-anchor="middle" class="table-title">OrderItem</text>
+  
+  <rect x="550" y="375" width="180" height="140" class="table-body" />
+  <text x="560" y="390" class="pk">Id (PK) - int</text>
+  <text x="560" y="405" class="fk">OrderId (FK) - int</text>
+  <text x="560" y="420" class="fk">ProductId (FK) - int</text>
+  <text x="560" y="435" class="field">Quantity - int</text>
+  <text x="560" y="450" class="field">UnitPrice - decimal(18,2)</text>
+  <text x="560" y="465" class="field">TotalPrice - Calculated</text>
+  <text x="560" y="480" class="field">Order - Navigation</text>
+  <text x="560" y="495" class="field">Product - Navigation</text>
+  <text x="560" y="510" class="field">└─ Navigation Properties</text>
+  
+  <!-- Relationships -->
+  <!-- Category -> Product (1:N) -->
+  <line x1="230" y1="150" x2="300" y2="195" class="relationship" />
+  <text x="250" y="170" class="relationship-label">1:N</text>
+  
+  <!-- Customer -> Order (1:N) -->
+  <line x1="230" y1="450" x2="300" y2="420" class="relationship" />
+  <text x="250" y="435" class="relationship-label">1:N</text>
+  
+  <!-- Order -> OrderItem (1:N) -->
+  <line x1="480" y1="420" x2="550" y2="420" class="relationship" />
+  <text x="510" y="415" class="relationship-label">1:N</text>
+  
+  <!-- Product -> OrderItem (1:N) -->
+  <line x1="500" y1="250" x2="640" y2="375" class="relationship" />
+  <text x="570" y="310" class="relationship-label">1:N</text>
+  
+  <!-- Indexes and Constraints Box -->
+  <rect x="750" y="80" width="220" height="300" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1" />
+  <text x="760" y="100" class="table-title" fill="#2c3e50">Índices e Restrições</text>
+  
+  <text x="760" y="125" class="field" font-weight="bold">Índices:</text>
+  <text x="760" y="140" class="field">• IX_Product_Name</text>
+  <text x="760" y="155" class="field">• IX_Product_CategoryId</text>
+  <text x="760" y="170" class="field">• IX_Product_Price</text>
+  <text x="760" y="185" class="field">• IX_Customer_Email (Unique)</text>
+  <text x="760" y="200" class="field">• IX_Order_CustomerId</text>
+  <text x="760" y="215" class="field">• IX_Order_OrderDate</text>
+  <text x="760" y="230" class="field">• IX_OrderItem_OrderId</text>
+  <text x="760" y="245" class="field">• IX_OrderItem_ProductId</text>
+  
+  <text x="760" y="270" class="field" font-weight="bold">Restrições:</text>
+  <text x="760" y="285" class="field">• Product.Price > 0</text>
+  <text x="760" y="300" class="field">• Product.Stock >= 0</text>
+  <text x="760" y="315" class="field">• OrderItem.Quantity > 0</text>
+  <text x="760" y="330" class="field">• OrderItem.UnitPrice > 0</text>
+  <text x="760" y="345" class="field">• Customer.Email (Unique)</text>
+  <text x="760" y="360" class="field">• Soft Delete (IsActive)</text>
+  
+  <!-- Seed Data Box -->
+  <rect x="750" y="400" width="220" height="180" fill="#e8f5e8" stroke="#27ae60" stroke-width="1" />
+  <text x="760" y="420" class="table-title" fill="#27ae60">Dados Iniciais (Seed)</text>
+  
+  <text x="760" y="445" class="field" font-weight="bold">Categorias:</text>
+  <text x="760" y="460" class="field">• Eletrônicos</text>
+  <text x="760" y="475" class="field">• Roupas e Acessórios</text>
+  <text x="760" y="490" class="field">• Casa e Jardim</text>
+  <text x="760" y="505" class="field">• Livros</text>
+  <text x="760" y="520" class="field">• Esportes</text>
+  
+  <text x="760" y="545" class="field" font-weight="bold">Produtos:</text>
+  <text x="760" y="560" class="field">• 10+ produtos de exemplo</text>
+  <text x="760" y="575" class="field">• Diferentes categorias</text>
+  
+  <!-- Legend -->
+  <rect x="50" y="580" width="680" height="80" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1" />
+  <text x="60" y="600" class="table-title" fill="#2c3e50">Legenda:</text>
+  <text x="60" y="620" class="pk">PK - Primary Key (Chave Primária)</text>
+  <text x="250" y="620" class="fk">FK - Foreign Key (Chave Estrangeira)</text>
+  <text x="450" y="620" class="field">Campo Regular</text>
+  <text x="60" y="640" class="relationship-label">1:N - Relacionamento Um para Muitos</text>
+  <text x="250" y="640" class="field">Navigation Property - Propriedade de Navegação EF</text>
+</svg>
