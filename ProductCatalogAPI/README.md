@@ -1,5 +1,15 @@
 # Product Catalog API
 
+## 👥 Equipe de Desenvolvimento
+
+| Nome | RM |
+|------|-----|
+| Gustavo Vegi Pedro Henrique Silva de Morais | RM550188 |
+| Lucas Rodrigues Delfino | RM98804 |
+| Luisa Cristina dos Santos Neves | RM550196 |
+| Gabriel Aparecido Cassalho Xavier | RM551889 |
+| [Nome do 5º Integrante] | RM99794 |
+
 ## 📋 Descrição do Projeto
 
 API REST completa para gerenciamento de catálogo de produtos desenvolvida em ASP.NET Core com Entity Framework. O sistema oferece operações CRUD completas, pesquisas avançadas com LINQ, integração com APIs externas e documentação Swagger.
